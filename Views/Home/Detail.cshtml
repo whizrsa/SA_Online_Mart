@@ -1,5 +1,16 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model SA_Online_Mart.Models.Product
+
+<div class="product-detail">
+    <div>
+        <img src="@Model.ImageUrl" alt="@Model.ProductName" />
+    </div>
+    
+    <div class="product-info">
+        <h2>@Model.ProductName</h2>
+        <p>Price: R @Model.Price</p>
+        <p>Category: @Model.Category.CategoryName</p>
+        <p>Description: @Model.Description</p>
+        <a asp-controller="Cart" asp-action="Index" class="btn btn-primary">Add to Cart</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Return to Home</a>
+    </div>
+</div>

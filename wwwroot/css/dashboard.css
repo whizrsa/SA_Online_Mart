@@ -49,3 +49,15 @@
     margin: 1rem 0;
     color: white;
 }
+
+/* Detail page */
+.product-detail {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    column-gap: 100px;
+}
+
+.product-detail div img{
+    width: 400px;
+}

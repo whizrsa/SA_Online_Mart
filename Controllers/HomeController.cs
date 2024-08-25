@@ -46,9 +46,21 @@ namespace SA_Online_Mart.Controllers
             return View();
         }
 
-        public IActionResult Detail()
+        public async Task<IActionResult> Detail(int id)
         {
-            return View();
+            // Find the product by its ID, including the Category information
+            var product = await _context.Products
+                .Include(p => p.Category)
+                .FirstOrDefaultAsync(p => p.ProductId == id);
+
+            // If no product is found, return a NotFound view or an error message
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            // Pass the product to the view
+            return View(product);
         }
     }
 }

@@ -72,8 +72,9 @@
                                 <p class="card-text">Price: R @item.Price</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                                        <a type="button" asp-controller="Home" asp-action="Detail" asp-route-id="@item.ProductId" class=" btn btn-success">View</a>
+                                        <!--Just making sure l stay inside home instead of getting redirected to cart page-->
+                                        <a type="button" asp-controller="" asp-action="" asp-route-id="" class=" btn btn-outline-secondary">Add to Cart</a>
                                     </div>
                                     <small class="text-muted">@item.Category.CategoryName</small>
                                 </div>

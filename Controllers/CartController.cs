@@ -12,7 +12,7 @@ namespace SA_Online_Mart.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
             return View();
         }
